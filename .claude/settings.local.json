@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"C:\\Users\\shayp\\.config\\herd\\bin\\php.bat\" -r \"echo ''Czech test: ěščřžýáíé ĚŠČŘŽÝÁÍÉ'';\")",
+      "Bash(dir:*)",
+      "Bash(find:*)",
+      "Bash(php artisan make:migration:*)",
+      "Bash(\"C:\\Users\\shayp\\.config\\herd\\bin\\php.bat\" artisan make:migration add_currency_support_to_invoices_table)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

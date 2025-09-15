@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: bookkeeping-mysql
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: bookkeeping
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_USER: bookkeeper
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_HOST: "%"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./docker/mysql/my.cnf:/etc/mysql/my.cnf
+    networks:
+      - bookkeeping
+
+volumes:
+  mysql_data:
+    driver: local
+  vendor:
+    driver: local
+  node_modules:
+    driver: local
+
+networks:
+  bookkeeping:
+    driver: bridge
